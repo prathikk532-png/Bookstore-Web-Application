@@ -1,0 +1,3 @@
+package com.bookstore.entity;
+import jakarta.persistence.*;
+@Entity @Table(name="order_items") public class OrderItem { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @ManyToOne(optional=false) private Order order; @ManyToOne(optional=false) private Book book; private int quantity; private double unitPrice; public OrderItem(){} public OrderItem(Order o,Book b,int q,double p){order=o;book=b;quantity=q;unitPrice=p;} public Long getId(){return id;} public Order getOrder(){return order;} public Book getBook(){return book;} public int getQuantity(){return quantity;} public double getUnitPrice(){return unitPrice;} }

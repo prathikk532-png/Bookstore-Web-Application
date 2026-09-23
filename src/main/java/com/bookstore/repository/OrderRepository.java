@@ -1,0 +1,1 @@
+package com.bookstore.repository; import com.bookstore.entity.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface OrderRepository extends JpaRepository<Order,Long>{List<Order> findByUserOrderByCreatedAtDesc(User u);}

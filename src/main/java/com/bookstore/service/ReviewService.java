@@ -1,0 +1,2 @@
+package com.bookstore.service; import com.bookstore.entity.*; import com.bookstore.repository.*; import org.springframework.stereotype.Service; import java.util.*;
+@Service public class ReviewService {private final ReviewRepository repo; private final BookRepository books; public ReviewService(ReviewRepository r,BookRepository b){repo=r;books=b;} public List<Review> forBook(Long id){return repo.findByBookId(id);} public void add(User u,Long bid,int rating,String comment){repo.save(new Review(books.findById(bid).orElseThrow(),u,rating,comment));}}

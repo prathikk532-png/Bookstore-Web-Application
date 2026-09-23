@@ -1,0 +1,1 @@
+package com.bookstore.repository; import com.bookstore.entity.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface CartRepository extends JpaRepository<CartItem,Long>{List<CartItem> findByUser(User u); Optional<CartItem> findByUserAndBook(User u,Book b); void deleteByUser(User u);}
